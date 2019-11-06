@@ -4,8 +4,8 @@
 |user_id|integer|null: false, t.references :user, foreign_key: true|
 |group_id|integer|null: false, t.references :user, foreign_key: true|
 ### Association
-- belongs_to :group
-- belongs_to :user
+  belongs_to :group
+  belongs_to :user
 
 ## usersテーブル
 |Column|Type|Options|
@@ -14,24 +14,24 @@
 |email|string|null: false, unique: true|
 |password|string|null: false|
 ### Association
-- has_many :group
-- has_many :user
-
+  has_many :groups
+  has_many :messages
+  has_many :groups_users
+  
 ## massageテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, t.references :user, foreign_key: true|
 |message|text|null: false|
 ### Association
-- belongs_to :group
-- belongs_to :user
+  belongs_to :group
+  belongs_to :user
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, t.references :user, foreign_key: true|
-|groupname|strig|null: false|
-|add_user|string|null: false|
+|group_id|integer|null: false|
 ### Association
-- has_many :message
-- has_many :user
+  has_many :messages
+  has_many :users
+  has_many :groups_users
