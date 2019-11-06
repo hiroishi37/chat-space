@@ -1,8 +1,8 @@
 ## groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, t.references :user, foreign_key: true|
+|group_id|integer|null: false, t.references :user, foreign_key: true|
 ### Association
 - belongs_to :group
 - belongs_to :user
@@ -20,7 +20,7 @@
 ## massageテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, t.references :user, foreign_key: true|
 |message|text|null: false|
 ### Association
 - belongs_to :group
@@ -29,7 +29,7 @@
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, t.references :user, foreign_key: true|
 |groupname|strig|null: false|
 |add_user|string|null: false|
 ### Association
