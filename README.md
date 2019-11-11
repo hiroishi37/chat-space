@@ -18,7 +18,7 @@
   has_many :messages
   has_many :groups_users
 
-## massageテーブル
+## messageテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
