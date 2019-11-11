@@ -4,13 +4,13 @@
       .side-header__box__user-name aaa
       .side-header__box__menu
         .side-header__box__menu__new-group
-          link_to new_group_path do
+          = link_to new_groups_path do
             .fa.fa-edit
         .side-header__box__menu__edit-user
-          .a{:href => "/users/2070/edit"}
+          = link_to edit_user_path() do
             .fa.fa-cog
   .groups
-    .a{:href => "/groups/4672/messages"}
+    = link_to messages_groups_path() do
       .group
         .group__group-name iiiii
         .group__latest-message hhhhhhh
