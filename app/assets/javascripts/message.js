@@ -35,11 +35,8 @@ $(function(){
       contentType: false
     })
     .done(function(message){
-      // console.table(message);
       let html = buildMessage(message);
-      // console.log(html);
       $('.messages').append(html);
-      // $('#message_content').val('');
       $("#new_message")[0].reset();
       $('.form__submit').prop('disabled', false);
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
